@@ -48,7 +48,7 @@ export default async function Home() {
           <div className="flex flex-col items-center">
             <div className="flex items-center">
               <Image
-                src={`/api/weather-icon/${data.weather[0].icon}`}
+                src={`/api/${data.weather[0].icon}`}
                 alt={data.weather[0].description}
                 width={60}
                 height={60}

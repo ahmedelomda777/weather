@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   _req: NextRequest,
-  { params }: { params: Promise<{ icon: string }> }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const { icon } = await params; 
+  const { id } = await params; 
 
-  const res = await fetch(`https://openweathermap.org/img/wn/${icon}@2x.png`);
-
+  const res = await fetch(`https://openweathermap.org/img/wn/${id}@2x.png`);
+ 
   if (!res.ok) {
     return new NextResponse(null, { status: res.status });
   }
