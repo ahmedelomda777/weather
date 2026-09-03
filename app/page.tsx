@@ -5,7 +5,7 @@ export default async function Home() {
   try {
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=31.04&lon=31.38&appid=${process.env.OPENWEATHER_API_KEY}&units=metric`,
-    );
+    {cache:"no-store"});
     data = await res.json();
   } catch (err) {
     console.log(err);
